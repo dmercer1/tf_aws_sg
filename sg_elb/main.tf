@@ -27,7 +27,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cidr_blocks = "${element(split(",", var.source_cidr_blocks), count.index)}"
+        cidr_blocks = ["${var.source_cidr_block}"]
     }
 
     // allow traffic for TCP 443
@@ -35,7 +35,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 443
         to_port = 443
         protocol = "tcp"
-        cidr_blocks = "${element(split(",", var.source_cidr_blocks), count.index)}"
+        cidr_blocks = ["${var.source_cidr_block}"]
     }
 
     egress {
