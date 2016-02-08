@@ -18,7 +18,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allows traffic from the SG itself for udp
@@ -27,22 +27,6 @@ resource "aws_security_group" "main_security_group" {
         to_port = 65535
         protocol = "udp"
         self = true
-    }
-
-    // allow traffic for TCP 80
-    ingress {
-        from_port = 80
-        to_port = 80
-        protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_blocks}"]
-    }
-
-    // allow traffic for TCP 443
-    ingress {
-        from_port = 443
-        to_port = 443
-        protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     egress {

@@ -27,7 +27,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 443
