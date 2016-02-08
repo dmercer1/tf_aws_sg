@@ -35,7 +35,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 443
         to_port = 443
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     egress {
