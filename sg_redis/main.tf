@@ -27,7 +27,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 6379 (Redis)
@@ -35,7 +35,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 6379
         to_port = 6379
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
 }

@@ -7,6 +7,6 @@ variable "vpc_id" {
   description = "The VPC this security group will go in"
 }
 
-variable "source_cidr_block" {
+variable "source_cidr_blocks" {
   description = "The source CIDR block to allow traffic from"
 }

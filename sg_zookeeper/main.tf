@@ -27,7 +27,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 2181
@@ -35,7 +35,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 2181
         to_port = 2181
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 2888
@@ -43,7 +43,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 2888
         to_port = 2888
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
 
@@ -52,7 +52,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 7199
         to_port = 7199
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 3888
@@ -60,7 +60,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 3888
         to_port = 3888
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
 }

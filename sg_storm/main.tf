@@ -32,7 +32,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 6627 (Nimbus)
@@ -40,7 +40,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 6627
         to_port = 6627
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 8080 (Storm UI)
@@ -48,7 +48,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 8080
         to_port = 8080
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 6700-6703 (Supervisor)
@@ -56,7 +56,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 6700
         to_port = 6703
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
 }

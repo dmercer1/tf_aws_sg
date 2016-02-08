@@ -32,7 +32,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 6667 (Kafka broker 0.8.1.x)
@@ -40,7 +40,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 6667
         to_port = 6667
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9092 (Kafka broker 0.8.2+)
@@ -48,7 +48,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9092
         to_port = 9092
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
 }

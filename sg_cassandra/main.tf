@@ -33,7 +33,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9042 (Cassandra clients)
@@ -41,7 +41,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9042
         to_port = 9042
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9160 (Cassandra Thrift clients)
@@ -49,7 +49,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9160
         to_port = 9160
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 7199 (JMX)
@@ -57,6 +57,6 @@ resource "aws_security_group" "main_security_group" {
         from_port = 7199
         to_port = 7199
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 }

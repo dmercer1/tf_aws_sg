@@ -1,4 +1,4 @@
-
+// Provider specific configs
 
 // Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
@@ -14,6 +14,13 @@ resource "aws_security_group" "main_security_group" {
         self = true
     }
 
+    ingress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = "${element(split(",", var.private_subnets), count.index)}"
+    }
+
     // allows traffic from the SG itself for udp
     ingress {
         from_port = 0
@@ -22,28 +29,26 @@ resource "aws_security_group" "main_security_group" {
         self = true
     }
 
-    // allow traffic for TCP 22
+    // allow traffic for TCP 80
     ingress {
-        from_port = 22
-        to_port = 22
+        from_port = 80
+        to_port = 80
         protocol = "tcp"
         cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
-    // allow traffic for TCP 9200 (REST Interface)
+    // allow traffic for TCP 443
     ingress {
-        from_port = 9200
-        to_port = 9200
+        from_port = 443
+        to_port = 443
         protocol = "tcp"
         cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
-    // allow traffic for TCP 9300 (Java Interface)
-    ingress {
-        from_port = 9300
-        to_port = 9300
-        protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_blocks}"]
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
     }
-
 }

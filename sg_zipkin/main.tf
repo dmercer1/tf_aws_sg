@@ -33,7 +33,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9990 (zipkin admin port collector)
@@ -41,7 +41,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9990
         to_port = 9990
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9901 (zipkin admin port query)
@@ -49,7 +49,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9901
         to_port = 9901
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for UDP 9991 (zipkin admin port web)
@@ -57,7 +57,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9991
         to_port = 9991
         protocol = "udp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 9411 (zipkin query port)
@@ -65,7 +65,7 @@ resource "aws_security_group" "main_security_group" {
         from_port = 9411
         to_port = 9411
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 
     // allow traffic for TCP 8080 (zipkin web port)
@@ -73,6 +73,6 @@ resource "aws_security_group" "main_security_group" {
         from_port = 8080
         to_port = 8080
         protocol = "tcp"
-        cidr_blocks = ["${var.source_cidr_block}"]
+        cidr_blocks = ["${var.source_cidr_blocks}"]
     }
 }
