@@ -17,7 +17,7 @@ resource "aws_security_group" "main_security_group" {
       from_port = 0
       to_port = 0
       protocol = "-1"
-      cidr_blocks = ["${split(",", var.source_security_groups)}"]
+      security_groups = ["${split(",", var.source_security_groups)}"]
     }
 
     egress {
