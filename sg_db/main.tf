@@ -9,31 +9,31 @@ resource "aws_security_group" "main_security_group" {
     ingress {
         from_port = 5432
         to_port = 5432
-        protocol = "-1"
+        protocol = "tcp"
         cidr_blocks = ["${split(",", var.source_cidr_blocks)}"]
     }
     ingress {
         from_port = 5432
         to_port = 5432
-        protocol = "-1"
+        protocol = "tcp"
         security_groups = ["${split(",", var.source_security_groups)}"]
     }
     ingress {
         from_port = 5672
         to_port = 5672
-        protocol = "-1"
+        protocol = "tcp"
         security_groups = ["${split(",", var.source_security_groups)}"]
     }
     ingress {
         from_port = 15762
         to_port = 15762
-        protocol = "-1"
+        protocol = "tcp"
         cidr_blocks = ["${split(",", var.source_cidr_blocks)}"]
     }
     ingress {
         from_port = 22
         to_port = 22
-        protocol = "-1"
+        protocol = "tcp"
         cidr_blocks = ["${split(",", var.source_cidr_blocks)}"]
     }
     egress {
